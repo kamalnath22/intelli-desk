@@ -207,7 +207,9 @@ function setupAuthenticatedView() {
     userRole.className = `role-badge role-${user.role}`;
 
     ticketsTitle.textContent = user.role === "EMPLOYEE" ? "My Tickets" : user.role === "AGENT" ? "Assigned Tickets" : "All Tickets";
-    ticketForm.hidden = user.role !== "EMPLOYEE";
+    const canCreateTicket = user.role === "EMPLOYEE";
+    ticketForm.hidden = !canCreateTicket;
+    ticketForm.style.display = canCreateTicket ? "grid" : "none";
     reviewSection.hidden = !["AGENT", "ADMIN"].includes(user.role);
 
     setMessage("");
@@ -222,6 +224,7 @@ function setupUnauthenticatedView() {
     detail.hidden = true;
     ticketsBody.innerHTML = "";
     ticketForm.hidden = false;
+    ticketForm.style.display = "grid";
     reviewSection.hidden = true;
     setMessage("");
 }

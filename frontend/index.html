@@ -4,15 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IT Ticket Platform — Auto-Routing &amp; SLA Management</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
     <main class="page">
         <section class="panel">
             <header class="main-header">
-                <div>
-                    <h1>IT Ticket Management Platform</h1>
-                    <p class="subtitle">Phase 3: Ticket workflow &amp; role-based operations</p>
+                <div class="brand-lockup">
+                    <span class="brand-mark" aria-hidden="true">IT</span>
+                    <div>
+                        <p class="eyebrow">Internal service desk</p>
+                        <h1>IT Ticket Management Platform</h1>
+                        <p class="subtitle">Ticket workflow &amp; role-based operations</p>
+                    </div>
                 </div>
                 <div id="user-bar" class="user-bar" hidden>
                     <div class="user-info">
@@ -25,15 +29,28 @@
 
             <!-- Authentication Section (Shown when unauthenticated) -->
             <section id="auth-section" class="auth-section">
-                <div class="auth-tabs">
-                    <button id="tab-login" type="button" class="tab-btn active">Sign In</button>
-                    <button id="tab-register" type="button" class="tab-btn">Register</button>
+                <div class="auth-intro">
+                    <span class="eyebrow">Workspace access</span>
+                    <h2>Welcome back.</h2>
+                    <p>Sign in to continue to your service desk workspace.</p>
+                    <div class="auth-intro-footer">
+                        <span class="intro-dot" aria-hidden="true"></span>
+                        <span>Ready when you are</span>
+                    </div>
                 </div>
 
                 <div class="auth-content">
+                    <div class="auth-tabs">
+                        <button id="tab-login" type="button" class="tab-btn active">Sign In</button>
+                        <button id="tab-register" type="button" class="tab-btn">Register</button>
+                    </div>
+
                     <!-- Login Form -->
                     <form id="login-form" class="auth-form">
-                        <h2>Login to Your Account</h2>
+                        <div class="form-heading">
+                            <h2>Sign in to your account</h2>
+                            <p>Use your work credentials to continue.</p>
+                        </div>
 
                         <label for="login-email">Email Address</label>
                         <input id="login-email" type="email" placeholder="name@example.com" required autocomplete="email">
@@ -46,7 +63,10 @@
 
                     <!-- Register Form -->
                     <form id="register-form" class="auth-form" hidden>
-                        <h2>Register as Employee</h2>
+                        <div class="form-heading">
+                            <h2>Join the workspace</h2>
+                            <p>Create an employee account to submit tickets.</p>
+                        </div>
                         <p class="form-hint">Public registrations are assigned the <strong>EMPLOYEE</strong> role.</p>
 
                         <label for="register-name">Full Name</label>
@@ -64,11 +84,11 @@
                     <p id="auth-message" class="message" role="status" aria-live="polite"></p>
 
                     <div class="demo-accounts">
-                        <p><strong>Demo Accounts:</strong></p>
+                        <p class="demo-title"><strong>Quick access</strong><span>Use a demo profile</span></p>
                         <ul>
-                            <li><button type="button" class="link-btn" onclick="fillLogin('employee@example.com','Employee123')">Employee</button>: <code>employee@example.com</code> / <code>Employee123</code></li>
-                            <li><button type="button" class="link-btn" onclick="fillLogin('agent@example.com','Agent123')">Agent</button>: <code>agent@example.com</code> / <code>Agent123</code></li>
-                            <li><button type="button" class="link-btn" onclick="fillLogin('admin@example.com','Admin123')">Admin</button>: <code>admin@example.com</code> / <code>Admin123</code></li>
+                            <li><button type="button" class="link-btn" onclick="fillLogin('employee@example.com','Employee123')">Employee</button><code>employee@example.com</code><span>Employee123</span></li>
+                            <li><button type="button" class="link-btn" onclick="fillLogin('agent@example.com','Agent123')">Agent</button><code>agent@example.com</code><span>Agent123</span></li>
+                            <li><button type="button" class="link-btn" onclick="fillLogin('admin@example.com','Admin123')">Admin</button><code>admin@example.com</code><span>Admin123</span></li>
                         </ul>
                     </div>
                 </div>
@@ -148,6 +168,6 @@
         </section>
     </main>
 
-    <script src="app.js"></script>
+    <script src="app.js?v=3"></script>
 </body>
 </html>
